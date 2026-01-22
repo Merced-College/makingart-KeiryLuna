@@ -4,8 +4,28 @@ CPSC -25
 
 #include <iostream>
 #include <fstream>
+#include <vector>
+
+struct RGB {
+    int r;
+    int g;
+    int b;
+};
 
 int main() {
+   //Added the color palette
+    std:: vector<RGB> palette = {
+    {66, 30, 15},
+    {25, 7, 26},
+    {9, 1, 47},
+    {0, 0, 90},
+    {255, 255, 255}
+};
+
+pallet.pushback({255, 100, 0})
+pallet.pushback({0, 255, 100})
+
+
     const int WIDTH = 800;
     const int HEIGHT = 600;
     const int MAX_ITER = 300;
@@ -40,7 +60,13 @@ int main() {
     out << "      iter--;\n";
     out << "    }\n";
 
-    // Color 
+    out << " let index =  iter % " << palette.size() << ";\n";
+    
+
+   
+    
+
+// Color 
     out << "    let color = iter | (iter << 8);\n";
     out << "    data[i++] = (color >> 16) & 255;\n";
     out << "    data[i++] = (color >> 8) & 255;\n";
